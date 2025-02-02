@@ -39,4 +39,5 @@ terraform.rc
 # Custom
 .terraform.lock.hcl
 ny_taxi_postgres_data/
+postgres-data/
 variables.tf
