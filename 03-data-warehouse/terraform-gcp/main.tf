@@ -30,21 +30,23 @@ resource "google_bigquery_dataset" "demo_dataset" {
 
 resource "google_bigquery_table" "external_table" {
   dataset_id = google_bigquery_dataset.demo_dataset.dataset_id
-  table_id = "yellow_tripdata_external"
+  table_id   = "yellow_tripdata_external"
   external_data_configuration {
-    autodetect = true
+    autodetect    = true
     source_format = "PARQUET"
-    source_uris = ["gs://${var.gcs_bucket_name}/*.parquet"]
+    source_uris   = ["gs://${var.gcs_bucket_name}/*.parquet"]
   }
+  deletion_protection = false
 }
 
 resource "google_bigquery_table" "regular_table" {
-  dataset_id = google_bigquery_dataset.demo_dataset.dataset_id
-  table_id = "yellow_tripdata_regular"
+  dataset_id          = google_bigquery_dataset.demo_dataset.dataset_id
+  table_id            = "yellow_tripdata_regular"
+  deletion_protection = false
 }
 
 resource "google_bigquery_job" "load_parquet" {
-  job_id     = "load_parquet_to_bigquery_job_1"
+  job_id   = "load_parquet_to_bigquery_job_1"
   location = var.location
 
   load {
@@ -55,7 +57,7 @@ resource "google_bigquery_job" "load_parquet" {
       table_id   = google_bigquery_table.regular_table.table_id
     }
 
-    source_format    = "PARQUET"
+    source_format     = "PARQUET"
     write_disposition = "WRITE_TRUNCATE"
 
     autodetect = true
