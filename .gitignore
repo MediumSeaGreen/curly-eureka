@@ -42,3 +42,4 @@ ny_taxi_postgres_data/
 postgres-data/
 variables.tf
 *.parquet
+*.duckdb
