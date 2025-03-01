@@ -11,3 +11,6 @@ See 03-data-warehouse
 
 ## Module Workshop dlt
 See 035-dlt
+
+## Module 4 Homework
+See 04-analytics-engineering
