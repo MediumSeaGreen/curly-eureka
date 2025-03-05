@@ -43,3 +43,8 @@ postgres-data/
 variables.tf
 *.parquet
 *.duckdb
+.DS_Store
+_SUCCESS
+._SUCCESS.crc
+.part*
+*.csv
