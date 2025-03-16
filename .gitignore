@@ -48,3 +48,4 @@ _SUCCESS
 ._SUCCESS.crc
 .part*
 *.csv
+06-streaming/flink_venv/

@@ -17,3 +17,6 @@ See 04-analytics-engineering
 
 ## Module 5 Homework
 See 05-batch
+
+## Module 6 Homework
+See 06-streaming
